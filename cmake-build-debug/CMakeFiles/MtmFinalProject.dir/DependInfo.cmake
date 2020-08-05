@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Asus/Documents/Clion/MtmFinalProject/Edge.cpp" "C:/Users/Asus/Documents/Clion/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj"
-  "C:/Users/Asus/Documents/Clion/MtmFinalProject/Graph.cpp" "C:/Users/Asus/Documents/Clion/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir/Graph.cpp.obj"
-  "C:/Users/Asus/Documents/Clion/MtmFinalProject/Vertex.cpp" "C:/Users/Asus/Documents/Clion/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj"
-  "C:/Users/Asus/Documents/Clion/MtmFinalProject/main.cpp" "C:/Users/Asus/Documents/Clion/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir/main.cpp.obj"
+  "F:/Documents/GitHub/WizardCell/MtmFinalProject/Edge.cpp" "F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj"
+  "F:/Documents/GitHub/WizardCell/MtmFinalProject/Graph.cpp" "F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir/Graph.cpp.obj"
+  "F:/Documents/GitHub/WizardCell/MtmFinalProject/Vertex.cpp" "F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj"
+  "F:/Documents/GitHub/WizardCell/MtmFinalProject/main.cpp" "F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
