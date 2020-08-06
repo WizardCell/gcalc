@@ -1,47 +1,68 @@
 
 #include "Edge.h"
-#include "Vertex.h"
-
-#include <iostream>
-#include <set>
 
 
 
-Edge::Edge(Vertex src_Vertex, Vertex dest_Vertex)
-	: src_Vertex(src_Vertex.getName()), dest_Vertex(dest_Vertex.getName()), pair(src_Vertex, dest_Vertex)
-{
+
+Edge::Edge(Vertex src_vertex, Vertex dest_vertex)
+        : src_vertex(src_vertex.getName()), dest_vertex(dest_vertex.getName()) {
 
 }
 
-Edge::Edge(const Edge& other)
-{
-	this->src_Vertex = other.src_Vertex;
-	this->dest_Vertex = other.dest_Vertex;
-	pair = std::make_pair(src_Vertex, dest_Vertex);
+Edge::Edge(const Edge &other) {
+    this->src_vertex = other.src_vertex;
+    this->dest_vertex = other.dest_vertex;
 }
 
-Edge::~Edge()
-{
 
+const Vertex &Edge::getSourceVertex() const {
+    return this->src_vertex;
 }
 
-const Vertex& Edge::getSourceVertex() const
-{
-	return this->src_Vertex;
+const Vertex &Edge::getDestinationVertex() const {
+    return this->dest_vertex;
 }
 
-const Vertex& Edge::getDestinationVertex() const
-{
-	return this->dest_Vertex;
+bool Edge::operator==(const Edge& other) const{
+    return ((this->src_vertex == other.src_vertex) && (this->dest_vertex == other.dest_vertex));
 }
 
-int main()
+bool Edge::operator<(const Edge& other) const
 {
-	Vertex v1("mhmd");
-	Vertex v2("mhmd");
-	std::set<Vertex&> vertices;
-	vertices.emplace(v1);
-	vertices.emplace(v2);
-	std::cout << vertices.size();
-	return 0;
+    if(this->src_vertex < other.src_vertex){
+        return true;
+    }
+    else if(this->src_vertex == other.src_vertex){
+        return (this->dest_vertex == other.dest_vertex);
+    }
+}
+
+bool Edge::operator<=(const Edge& other) const
+{
+    if(this->src_vertex <= other.src_vertex){
+        return true;
+    }
+    else if(this->src_vertex == other.src_vertex){
+        return (this->dest_vertex <= other.dest_vertex);
+    }
+}
+
+bool Edge::operator>(const Edge& other) const
+{
+    if(this->src_vertex > other.src_vertex){
+        return true;
+    }
+    else if(this->src_vertex == other.src_vertex){
+        return (this->dest_vertex > other.dest_vertex);
+    }
+}
+
+bool Edge::operator>=(const Edge& other) const
+{
+    if(this->src_vertex >= other.src_vertex){
+        return true;
+    }
+    else if(this->src_vertex == other.src_vertex){
+        return (this->dest_vertex >= other.dest_vertex);
+    }
 }
