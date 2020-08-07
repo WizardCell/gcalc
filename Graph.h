@@ -14,9 +14,15 @@ class Graph
 private:
 	std::set<Vertex>    vertices;
 	std::set<Edge>      edges;
-	//std::map< Vertex& , std::set<Edge&> > graph_map;
+
+
+
 
 public:
+
+	const std::set<Vertex> &getVertices() const;
+	const std::set<Edge> &getEdges() const;
+
 	Graph() = default;
 	Graph(std::set<Vertex> vertices , std::set<Edge> edges):vertices(vertices), edges(edges){}
 	Graph(const Graph& other) { // todo check

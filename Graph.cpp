@@ -88,3 +88,11 @@ Graph Graph::operator!() const{
    }
    return Graph(complement_vertices, complement_edges);
 }
+
+const std::set<Vertex> &Graph::getVertices() const {
+    return vertices;
+}
+
+const std::set<Edge> &Graph::getEdges() const {
+    return edges;
+}

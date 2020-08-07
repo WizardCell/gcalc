@@ -33,18 +33,20 @@ bool Edge::operator<(const Edge& other) const
         return true;
     }
     else if(this->src_vertex == other.src_vertex){
-        return (this->dest_vertex == other.dest_vertex);
+        return (this->dest_vertex < other.dest_vertex);
     }
+    else return false;
 }
 
 bool Edge::operator<=(const Edge& other) const
 {
-    if(this->src_vertex <= other.src_vertex){
+    if(this->src_vertex < other.src_vertex){
         return true;
     }
     else if(this->src_vertex == other.src_vertex){
         return (this->dest_vertex <= other.dest_vertex);
     }
+    else return false;
 }
 
 bool Edge::operator>(const Edge& other) const
@@ -55,14 +57,16 @@ bool Edge::operator>(const Edge& other) const
     else if(this->src_vertex == other.src_vertex){
         return (this->dest_vertex > other.dest_vertex);
     }
+    else return false;
 }
 
 bool Edge::operator>=(const Edge& other) const
 {
-    if(this->src_vertex >= other.src_vertex){
+    if(this->src_vertex > other.src_vertex){
         return true;
     }
     else if(this->src_vertex == other.src_vertex){
         return (this->dest_vertex >= other.dest_vertex);
     }
+    else return false;
 }

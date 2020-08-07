@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <cctype>
 #include <cassert>
+#include <fstream>
+#include <stdio.h>
 
 #include "Graph.h"
 #include "Exceptions.h"
@@ -41,7 +43,8 @@ Graph executeOperation(Graph& G2, Graph& G3, const char operation){
         case('*'):
             return G2*G3;
         default:
-            std::cout<<"something very bad happened"<<std::endl; //todo remove when we are sure
+            //std::cout<<"something very bad happened"<<std::endl;
+            // todo remove when we are sure
             return G2;
     }
 }
@@ -65,7 +68,7 @@ Graph executeOperation(Graph& G2, Graph& G3, const char operation){
 
     bool isAlphanumeric(const std::string &s) {
         for (auto &character : s) {
-            if (!isalnum(character)) {
+            if (!isalnum(character) || !isalpha(s[0])) {
                 return false;
             }
         }
@@ -185,7 +188,7 @@ std::set<Edge> splitEdges(const std::string& str, std::set<Vertex>& Vertex_set){
     }
 
     size_t findOperation(const std::string& s){
-        size_t count=1;
+        size_t count=0;
         for(auto &character : s){
             if ((character == '+') || (character == '^') || (character == '-') || (character == '*') ||
                 (character == '!')) {
@@ -223,15 +226,32 @@ Graph defineGraph(std::string& lhs, std::string& rhs) {
     }
 }
 
+void printGraph(const Graph& graph, FILE* output){
+    for(const auto& v : graph.getVertices()){
+        fputs( v.getName().c_str() , output);
+        fputs( "\n" , output );
+    }
+
+    fputs( "$\n" , output);
+
+    for(const auto& e : graph.getEdges()){
+        fputs( e.getSourceVertex().getName().c_str() , output);
+        fputs( " " , output );
+        fputs( e.getDestinationVertex().getName().c_str() , output);
+        fputs( "\n" , output );
+    }
+}
+
 class Gcalc {
     std::map<std::string, Graph> graphs_map;
 
 
 public:
     std::string                 prompt;
-    Gcalc():graphs_map(), prompt("Gcalc> "){}
+    bool should_iterate;
+    Gcalc():graphs_map(), prompt("Gcalc> "), should_iterate(true){}
 
-    void executeCommand(const std::string &cmd_line) {
+    void executeCommand(const std::string &cmd_line, FILE* output) {
         try {
             std::string trimmed_cmd_line = trim(cmd_line);
             unsigned long long eq_sign_index = trimmed_cmd_line.find('=');
@@ -241,14 +261,16 @@ public:
 
                 lhs = trimmed_cmd_line.substr(0, eq_sign_index);
                 lhs = trim(lhs);
+                if (!isAlphanumeric(lhs)) {
+                    throw IllegalName();
+                }
 
                 rhs = trimmed_cmd_line.substr(eq_sign_index + 1, std::string::npos);
                 rhs = trim(rhs);
 
-                if (!isAlphanumeric(lhs)) {
-                    throw IllegalName();
-                }
-                                                                                                //EdgeCase check if parentheses are allowed; example: G1 = (G2 + G3)
+                //EdgeCase check if parentheses are allowed; example: G1 = (G2 + G3)
+
+                
                 char op = checkAndReturnOperation(rhs);
                 if ((rhs.find_first_of('{') == 0) &&
                     (rhs.find_last_of('}') == rhs.length() - 1)) {
@@ -291,10 +313,81 @@ public:
                 //Do the operation on G2 G3.
                 return;
             }
+            else if(trimmed_cmd_line == "who"){
+                for(const auto& graph : graphs_map){
+                    fputs( graph.first.c_str() , output);
+                    fputs( "\n" , output );
+                }
+            }
+            else if(trimmed_cmd_line == "reset"){
+                graphs_map.clear();
+            }
+            else if(trimmed_cmd_line == "quit"){
+                should_iterate = false;
+            }
+            else if(trimmed_cmd_line.substr(0, 6)  == "print("){
+                size_t closer = trimmed_cmd_line.find_last_of(')');
+                std::string G = trimmed_cmd_line.substr(6, trimmed_cmd_line.length() - 7); //todo I think 7 instead of 6 also change in delete
+                G = trim(G);
+                if(!isAlphanumeric(G)){
+                    throw IllegalName();
+                }
+                if(graphs_map.count(G) == 0){
+                    throw UndefinedVariable(G);
+                }
+
+                //you're okay to print
+                printGraph((graphs_map.find(G))->second, output);
+            }
+            else if(trimmed_cmd_line.substr(0, 7) == "delete("){
+                size_t closer = trimmed_cmd_line.find_last_of(')');
+                std::string G = trimmed_cmd_line.substr(7, trimmed_cmd_line.length() - 8);
+                G = trim(G);
+                if(!isAlphanumeric(G)){
+                    throw IllegalName();
+                }
+                if(graphs_map.count(G) == 0){
+                    throw UndefinedVariable(G);
+                }
+
+                graphs_map.erase(G);
+            }
+            else if(trimmed_cmd_line.substr(0,5) == "gcalc"){
+                std::string IO_names = trimmed_cmd_line.substr(5, std::string::npos);
+                IO_names = trim(IO_names);
+                size_t space = IO_names.find_first_of(' ');
+                std::string input_name = IO_names.substr(0, space);
+                std::string output_name = IO_names.substr(space+1, std::string::npos);
+                input_name  = trim(input_name);
+                output_name = trim(output_name);
+
+                FILE* input_file  = fopen(input_name.c_str() , "r+");
+                if(input_file == NULL){
+                    std::cout << "NULLED" << std::endl; //todo
+                }
+                FILE* output_file = fopen(output_name.c_str(), "w");
+
+                Gcalc g_calc_inner = Gcalc();
+                while (g_calc_inner.should_iterate) {
+                    char cmd_line_inner[255];
+                    fgets(cmd_line_inner , 255 , input_file);
+                    if(cmd_line_inner[0] == '\0'){
+                        break;
+                    }
+                    g_calc_inner.executeCommand( cmd_line_inner , output_file );
+                    cmd_line_inner[0] = '\0';
+                }
+                fclose(input_file);
+                fclose(output_file);
+            }
+            else{
+                throw UnrecognizedCommand(cmd_line);
+            }
 
 
         }catch(const UndefinedVariable& e){
-            std::cout << e.what() << std::endl;
+            fputs( e.what() , output);
+            fputs( "\n" , output );
         }
     }
 
