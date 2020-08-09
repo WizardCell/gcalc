@@ -56,14 +56,36 @@ public:
     const char *what() const noexcept override;
 };
 
-class SelfEdge               : public ProjectException {
+class SelfEdge              : public ProjectException {
 public:
     const char *what() const noexcept override;
 };
 
-class ParallelEdges           : public ProjectException {
+class ParallelEdges         : public ProjectException {
 public:
     const char *what() const noexcept override;
 };
+
+class RedefinedVertex       : public ProjectException {
+public:
+    const char *what() const noexcept override;
+};
+
+class FileDidntOpen         : public ProjectException {
+public:
+    const char *what() const noexcept override;
+};
+
+class ReadFailed         : public ProjectException {
+public:
+    const char *what() const noexcept override;
+};
+
+class WriteFailed         : public ProjectException {
+public:
+    const char *what() const noexcept override;
+};
+
+
 
 #endif

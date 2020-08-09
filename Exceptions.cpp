@@ -39,4 +39,18 @@ const char *ParallelEdges::what() const noexcept {
     return "Error: Parallel edges";
 }
 
+const char *RedefinedVertex::what() const noexcept {
+    return "Error: Redefined vertex";
+}
 
+const char *FileDidntOpen::what() const noexcept {
+    return "Error: Couldn't open file";
+}
+
+const char *ReadFailed::what() const noexcept {
+    return "Error: Couldn't read from file successfully";
+}
+
+const char *WriteFailed::what() const noexcept {
+    return "Error: Couldn't write to file successfully";
+}

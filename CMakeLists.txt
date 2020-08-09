@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.16)
-project(MtmFinalProject)
+cmake_minimum_required(VERSION 3.13)
+project(Matam)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MtmFinalProject main.cpp Edge.cpp Vertex.cpp Graph.cpp)
+add_executable(Matam Edge.cpp Vertex.cpp ClassGraph.cpp gcalc.h gcalc.cpp Exceptions.h Exceptions.cpp graph.cpp graph.h)

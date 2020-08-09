@@ -1,12 +1,15 @@
 
 #include "Vertex.h"
+#include "Exceptions.h"
 
 
 
-
-Vertex::Vertex(std::string name){
+Vertex::Vertex(const std::string name){
+    if(name.empty()){
+        throw IllegalName();
+    }
     if(!isValid(name)){
-        throw; //todo define throw bad name
+        throw IllegalName();
     }
     this->name=name;
 }
@@ -24,19 +27,22 @@ bool Vertex::isValid(const std::string name) {
     return (AreLettersInRange(name) && isBracketBalanced(name) && isSemicolonValid(name));
 }
 
+
 bool Vertex::AreLettersInRange(std::string exp) {
+    if(exp.empty()){
+        return false;
+    }
     for (const char &c : exp) {
-        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')
-            || (c == '[') || (c == ']') || (c == ';')) {
+        if (isalnum(c) || isdigit(c) || (c == '[') || (c == ']') || (c == ';')) {
             continue;
         }
         else {
             return false;
         }
     }
-
     return true;
-}
+    }
+
 
 bool Vertex::isBracketBalanced(std::string exp) {
     std::stack<char> stk;
@@ -58,22 +64,21 @@ bool Vertex::isBracketBalanced(std::string exp) {
 
 bool Vertex::isSemicolonValid(std::string exp) {
     std::stack<char> stk;
-    for (unsigned int i = 0; i < exp.length(); i++) {
-        if (exp[i] == '[') {
-            stk.push(exp[i]);
+    bool flag = true;
+    for (char i : exp) {
+        if (i == '[') {
+            stk.push(i);
         }
-        else if (exp[i] == ']') {
+        else if (i == ']') {
             stk.pop();
         }
-        else if (exp[i] == ';'){
+        else if (i == ';'){
             if(stk.empty()){
-                return false;
-            }
-            else{
-                return true;
+                flag = false;
             }
         }
     }
+    return flag;
 }
 
 std::string Vertex::getName() const {

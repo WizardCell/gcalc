@@ -1,12 +1,14 @@
 
 #include "Edge.h"
-
+#include "Exceptions.h"
 
 
 
 Edge::Edge(Vertex src_vertex, Vertex dest_vertex)
         : src_vertex(src_vertex.getName()), dest_vertex(dest_vertex.getName()) {
-
+    if(src_vertex == dest_vertex){
+        throw SelfEdge();
+    }
 }
 
 Edge::Edge(const Edge &other) {

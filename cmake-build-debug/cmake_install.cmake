@@ -1,8 +1,8 @@
-# Install script for directory: F:/Documents/GitHub/WizardCell/MtmFinalProject
+# Install script for directory: C:/Users/salih/Desktop/Matam
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/MtmFinalProject")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Matam")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/salih/Desktop/Matam/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

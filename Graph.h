@@ -1,46 +1,24 @@
+#ifndef GRAPHWRAP_H
+#define GRAPHWRAP_H
 
-#ifndef PROJECT_GRAPH_H
-#define PROJECT_GRAPH_H
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
-#include "Vertex.h"
-#include "Edge.h"
-
-#include <map>
-#include <set>
-
-
-class Graph
-{
-private:
-	std::set<Vertex>    vertices;
-	std::set<Edge>      edges;
+#include "ClassGraph.h"
 
 
+Graph* create();
+void destroy(Graph* graph);
+Graph* addVertex(Graph* graph, const char* v);
+Graph* addEdge(Graph* graph, const char* v1, const char* v2);
+void disp(Graph* graph);
 
+Graph* graphUnion(Graph* graph_in1, Graph* graph_in2, Graph* graph_out);
+Graph* graphIntersection(Graph* graph_in1, Graph* graph_in2, Graph* graph_out);
+Graph* graphDifference(Graph* graph_in1, Graph* graph_in2, Graph* graph_out);
+Graph* graphProduct(Graph* graph_in1, Graph* graph_in2, Graph* graph_out);
+Graph* graphComplement(Graph* graph_in, Graph* graph_out);
 
-public:
-
-	const std::set<Vertex> &getVertices() const;
-	const std::set<Edge> &getEdges() const;
-
-	Graph() = default;
-	Graph(std::set<Vertex> vertices , std::set<Edge> edges):vertices(vertices), edges(edges){}
-	Graph(const Graph& other) { // todo check
-        vertices = other.vertices;
-        edges    = other.edges;
-	}~Graph() = default;
-	//todo: operator=
-	friend Graph operator+(const Graph& graph1, const Graph& graph2);
-	friend Graph operator^(const Graph& graph1, const Graph& graph2);
-	Graph operator-(const Graph& other) const;
-	friend Graph operator*(const Graph& graph1, const Graph& graph2);
-    Graph operator!() const;
-
-    //Todo: operator== ///Do it comparing the names
-};
-
-Graph operator+(const Graph& graph1, const Graph& graph2);
-Graph operator^(const Graph& graph1, const Graph& graph2);
-Graph operator*(const Graph& graph1, const Graph& graph2);
-#endif //PROJECT_GRAPH_H
-
+#endif // GRAPHWRAP_H

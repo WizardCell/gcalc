@@ -1,98 +1,163 @@
-#include "Graph.h"
+#include "graph.h"
+#include "gcalc.h"
 
-template<class T>
-std::set<T> set_union(std::set<T> left, std::set<T> right){
-    std::set<T> result = left;
-    result.insert(right.begin(), right.end());
-    return result;
+Graph *create() {
+    return new Graph();
 }
 
-template <class T>
-std::set<T> set_intersection(std::set<T> left, std::set<T> right){
-    std::set<T> intersection;
-    for(auto const &a : left){
-        if (right.count(a) > 0 ){
-            intersection.insert(a);
+void destroy(Graph* graph) {
+    delete graph;
+}
+
+Graph *addVertex(Graph *graph, const char* v_name) {
+    try {
+        if (graph == nullptr) {
+            std::cout << "Error: Graph is null" << std::endl;
+            return nullptr;
         }
-    }
-    return intersection;
-}
+        std::set<Vertex> vertex_set;
+        std::set<Edge> edges_set;
 
+        std::string v_string(v_name);
 
-Graph operator+(const Graph& graph1, const Graph& graph2){
-    return Graph(set_union(graph1.vertices, graph2.vertices), set_union(graph1.edges,graph2.edges));
-}
+        Vertex v(v_string);
 
-Graph operator^(const Graph& graph1, const Graph& graph2){
-    return Graph( set_intersection(graph1.vertices, graph2.vertices), set_intersection(graph1.edges,graph2.edges));
-}
-
-Graph Graph::operator-(const Graph& other) const{
-    std::set<Vertex> vertices_diff(vertices);
-    std::set<Edge> edges_diff(edges);
-    for(auto const &current_vertex : other.vertices){
-        if(vertices.count(current_vertex) > 0){
-            for(auto const &current_edge : edges_diff){
-                if((current_vertex == current_edge.getSourceVertex()) || (current_vertex == current_edge.getDestinationVertex())){
-                    edges_diff.erase(current_edge);
-                }
-            }
-            vertices_diff.erase(current_vertex);
+        if(graph->getVertices().count(v) > 0){
+            throw RedefinedVertex();
         }
+
+        vertex_set.insert(v);
+
+        Graph to_unify(vertex_set, edges_set);
+
+        *graph = *graph + to_unify;
+        return graph;
+    }catch (const IllegalName &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const UndefinedVariable &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const UnrecognizedCommand &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const EdgeMissingBeginPoint &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const EdgeMissingEndPoint &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const SelfEdge &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const ParallelEdges &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const RedefinedVertex &e) {
+        std::cout << e.what() << std::endl;
     }
-    return Graph(vertices, edges);
+    return nullptr;
 }
 
-Graph operator*(const Graph& left, const Graph& right){
-    std::set<Vertex> vertices_product;
-    std::set<Edge>   edges_product;
-    for(auto const& left_vertex : left.vertices){
-        for(auto const& right_vertex : right.vertices){
-
-            std::string vertex_src_product_name= "[" + left_vertex.getName() + ";" + right_vertex.getName() + "]";
-            Vertex vertex_src_product(vertex_src_product_name);
-            vertices_product.insert(vertex_src_product);
-
-            for(auto const& left_edge : left.edges){
-                if( left_vertex == left_edge.getSourceVertex() ){
-                    for(auto const& right_edge : right.edges) {
-                        if( right_vertex == right_edge.getSourceVertex() ){
-                            ///Add it to the Edge set.
-                            std::string vertex_dst_product_name= "[" + left_edge.getDestinationVertex().getName() + ";"
-                                                                     + right_edge.getDestinationVertex().getName() + "]";
-                            Vertex vertex_dst_product(vertex_dst_product_name);
-                            //vertices_product.insert(vertex_src_product); //this is myotar
-                            Edge edge_product(vertex_src_product, vertex_dst_product);
-                            edges_product.insert(edge_product);
-                        }
-                    }
-                }
-            }
+Graph *addEdge(Graph *graph, const char* v1_input, const char* v2_input) {
+    try{
+        if(graph == nullptr){
+            std::cout << "Error: Graph is null" << std::endl;
+            return nullptr;
         }
+        std::set<Vertex> vertex_set;
+        std::set<Edge> edges_set;
+
+        std::string v1_name(v1_input);
+        Vertex v1(v1_name);
+        std::string v2_name(v2_input);
+        Vertex v2(v2_name);
+        if(graph->getVertices().count(v1) == 0){
+            throw EdgeMissingBeginPoint(v1_name, v2_name);
+        }
+        if(graph->getVertices().count(v2) == 0){
+            throw EdgeMissingEndPoint(v1_name, v2_name);
+        }
+        vertex_set.insert(v1);
+        vertex_set.insert(v2);
+
+        Edge edge(v1,v2);
+        edges_set.insert(edge);
+
+        Graph to_unify(vertex_set, edges_set);
+        *graph = *graph + to_unify;
+
+        return graph;
+    }catch (const IllegalName &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const UndefinedVariable &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const UnrecognizedCommand &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const EdgeMissingBeginPoint &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const EdgeMissingEndPoint &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const SelfEdge &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const ParallelEdges &e) {
+        std::cout << e.what() << std::endl;
+    } catch (const RedefinedVertex &e) {
+        std::cout << e.what() << std::endl;
     }
-    return Graph(vertices_product, edges_product);
+    return nullptr;
 }
 
-Graph Graph::operator!() const{
-   std::set<Vertex> complement_vertices(this->vertices);
-   std::set<Edge>   complement_edges;
-   for(auto const& src : complement_vertices){
-       for(auto const& dst : complement_vertices){   //Todo: check if we need to check if src==dst
-           Edge edge(src, dst);
-           complement_edges.insert(edge);
-       }
-   }
-   ///Up until here complement_edges contains all possible edges
-   for(auto const& edge : this->edges){
-       complement_edges.erase(edge);
-   }
-   return Graph(complement_vertices, complement_edges);
+void disp(Graph *graph) {
+    if(graph == nullptr){
+        std::cout << "$" << std::endl; //Todo check this
+        return;
+    }
+    printGraph(*graph, std::cout);
 }
 
-const std::set<Vertex> &Graph::getVertices() const {
-    return vertices;
+Graph *graphUnion(Graph *graph_in1, Graph *graph_in2, Graph *graph_out) {
+    if( graph_in1 == nullptr || graph_in2 == nullptr || graph_out == nullptr ){
+        std::cout << "Error: Graph is null" << std::endl;
+        return nullptr;
+    }
+
+    *graph_out = *graph_in1 + *graph_in2;
+    return graph_out;
 }
 
-const std::set<Edge> &Graph::getEdges() const {
-    return edges;
+Graph *graphIntersection(Graph *graph_in1, Graph *graph_in2, Graph *graph_out) {
+    if( graph_in1 == nullptr || graph_in2 == nullptr || graph_out == nullptr ){
+        std::cout << "Error: Graph is null" << std::endl;
+        return nullptr;
+    }
+
+
+    *graph_out = *graph_in1 ^ *graph_in2;
+    return graph_out;
+
 }
+
+Graph *graphDifference(Graph *graph_in1, Graph *graph_in2, Graph *graph_out) {
+    if( graph_in1 == nullptr || graph_in2 == nullptr || graph_out == nullptr ){
+        std::cout << "Error: Graph is null" << std::endl;
+        return nullptr;
+    }
+
+    *graph_out = *graph_in1 - *graph_in2;
+    return graph_out;
+
+}
+
+Graph *graphProduct(Graph *graph_in1, Graph *graph_in2, Graph *graph_out) {
+    if(graph_in1 == nullptr || graph_in2 == nullptr || graph_out == nullptr){
+        std::cout << "Error: Graph is null" << std::endl;
+        return nullptr;
+    }
+    *graph_out = *graph_in1 * *graph_in2;
+    return graph_out;
+}
+
+Graph *graphComplement(Graph *graph_in, Graph *graph_out) {
+    if(graph_in == nullptr || graph_out == nullptr) {
+        std::cout << "Error: Graph is null" << std::endl;
+        return nullptr;
+    }
+    *graph_out = !(*graph_in);
+    return graph_out;
+
+}
+
