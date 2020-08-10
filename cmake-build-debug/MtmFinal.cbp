@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="MtmFinalProject"/>
+		<Option title="MtmFinal"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
@@ -17,8 +17,8 @@
 					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="MtmFinalProject">
-				<Option output="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/MtmFinalProject.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="Matam">
+				<Option output="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Matam.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -32,14 +32,14 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 MtmFinalProject"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matam"/>
 					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="MtmFinalProject/fast">
-				<Option output="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/MtmFinalProject.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="Matam/fast">
+				<Option output="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Matam.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -53,7 +53,7 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 MtmFinalProject/fast"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matam/fast"/>
 					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -81,40 +81,40 @@
 			</Target>
 		</Build>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/ClassGraph.cpp">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/ClassGraph.h">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Edge.cpp">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Edge.h">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Exceptions.cpp">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Exceptions.h">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Vertex.cpp">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Vertex.h">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/gcalc.cpp">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/gcalc.h">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/graph.cpp">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/graph.h">
-			<Option target="MtmFinalProject"/>
+			<Option target="Matam"/>
 		</Unit>
 		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

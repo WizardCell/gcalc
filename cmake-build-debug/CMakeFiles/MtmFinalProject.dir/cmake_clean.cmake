@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.obj"
   "CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj"
-  "CMakeFiles/MtmFinalProject.dir/Graph.cpp.obj"
+  "CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.obj"
   "CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj"
-  "CMakeFiles/MtmFinalProject.dir/main.cpp.obj"
+  "CMakeFiles/MtmFinalProject.dir/gcalc.cpp.obj"
+  "CMakeFiles/MtmFinalProject.dir/graph.cpp.obj"
   "MtmFinalProject.exe"
   "MtmFinalProject.exe.manifest"
   "MtmFinalProject.pdb"

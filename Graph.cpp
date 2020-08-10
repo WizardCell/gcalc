@@ -75,6 +75,9 @@ Graph *addEdge(Graph *graph, const char* v1_input, const char* v2_input) {
         vertex_set.insert(v2);
 
         Edge edge(v1,v2);
+        if(graph->getEdges().count(edge) > 0){
+            throw ParallelEdges();
+        }
         edges_set.insert(edge);
 
         Graph to_unify(vertex_set, edges_set);

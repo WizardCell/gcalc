@@ -569,7 +569,9 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
     try {
         std::string trimmed_cmd_line = trim(cmd_line);
         std::string lhs, rhs;
-
+        if(trimmed_cmd_line.empty()){
+            return;
+        }
         /*///Removes the parentheses
         removeParentheses(trimmed_cmd_line);*/
 

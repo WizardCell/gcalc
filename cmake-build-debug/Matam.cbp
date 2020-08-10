@@ -8,117 +8,115 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/salih/Desktop/Matam/cmake-build-debug"/>
+				<Option working_dir="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Matam">
-				<Option output="C:/Users/salih/Desktop/Matam/cmake-build-debug/Matam.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/salih/Desktop/Matam/cmake-build-debug"/>
+				<Option output="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Matam.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/backward"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../include"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include-fixed"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matam"/>
-					<CompileFile command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matam"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Matam/fast">
-				<Option output="C:/Users/salih/Desktop/Matam/cmake-build-debug/Matam.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/salih/Desktop/Matam/cmake-build-debug"/>
+				<Option output="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Matam.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/backward"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../include"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/include-fixed"/>
-					<Add directory="D:/Program Files (x86)/TDM-GCC/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matam/fast"/>
-					<CompileFile command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 Matam/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/salih/Desktop/Matam/cmake-build-debug"/>
+				<Option working_dir="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/salih/Desktop/Matam/cmake-build-debug"/>
+				<Option working_dir="F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files (x86)/TDM-GCC/bin/mingw32-make.exe -f &quot;C:/Users/salih/Desktop/Matam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/salih/Desktop/Matam/ClassGraph.cpp">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/ClassGraph.cpp">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/ClassGraph.h">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/ClassGraph.h">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/Edge.cpp">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Edge.cpp">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/Edge.h">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Edge.h">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/Exceptions.cpp">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Exceptions.cpp">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/Exceptions.h">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Exceptions.h">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/Vertex.cpp">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Vertex.cpp">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/Vertex.h">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/Vertex.h">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/gcalc.cpp">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/gcalc.cpp">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/gcalc.h">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/gcalc.h">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/graph.cpp">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/graph.cpp">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/graph.h">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/graph.h">
 			<Option target="Matam"/>
 		</Unit>
-		<Unit filename="C:/Users/salih/Desktop/Matam/CMakeLists.txt">
+		<Unit filename="F:/Documents/GitHub/WizardCell/MtmFinalProject/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

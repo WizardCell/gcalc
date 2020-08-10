@@ -76,22 +76,9 @@ include CMakeFiles/MtmFinalProject.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MtmFinalProject.dir/flags.make
 
-CMakeFiles/MtmFinalProject.dir/main.cpp.obj: CMakeFiles/MtmFinalProject.dir/flags.make
-CMakeFiles/MtmFinalProject.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MtmFinalProject.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MtmFinalProject.dir\main.cpp.obj -c F:\Documents\GitHub\WizardCell\MtmFinalProject\main.cpp
-
-CMakeFiles/MtmFinalProject.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MtmFinalProject.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Documents\GitHub\WizardCell\MtmFinalProject\main.cpp > CMakeFiles\MtmFinalProject.dir\main.cpp.i
-
-CMakeFiles/MtmFinalProject.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MtmFinalProject.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Documents\GitHub\WizardCell\MtmFinalProject\main.cpp -o CMakeFiles\MtmFinalProject.dir\main.cpp.s
-
 CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj: CMakeFiles/MtmFinalProject.dir/flags.make
 CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj: ../Edge.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MtmFinalProject.dir\Edge.cpp.obj -c F:\Documents\GitHub\WizardCell\MtmFinalProject\Edge.cpp
 
 CMakeFiles/MtmFinalProject.dir/Edge.cpp.i: cmake_force
@@ -104,7 +91,7 @@ CMakeFiles/MtmFinalProject.dir/Edge.cpp.s: cmake_force
 
 CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj: CMakeFiles/MtmFinalProject.dir/flags.make
 CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj: ../Vertex.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MtmFinalProject.dir\Vertex.cpp.obj -c F:\Documents\GitHub\WizardCell\MtmFinalProject\Vertex.cpp
 
 CMakeFiles/MtmFinalProject.dir/Vertex.cpp.i: cmake_force
@@ -115,38 +102,81 @@ CMakeFiles/MtmFinalProject.dir/Vertex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MtmFinalProject.dir/Vertex.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Documents\GitHub\WizardCell\MtmFinalProject\Vertex.cpp -o CMakeFiles\MtmFinalProject.dir\Vertex.cpp.s
 
-CMakeFiles/MtmFinalProject.dir/Graph.cpp.obj: CMakeFiles/MtmFinalProject.dir/flags.make
-CMakeFiles/MtmFinalProject.dir/Graph.cpp.obj: ../Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MtmFinalProject.dir/Graph.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MtmFinalProject.dir\Graph.cpp.obj -c F:\Documents\GitHub\WizardCell\MtmFinalProject\Graph.cpp
+CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.obj: CMakeFiles/MtmFinalProject.dir/flags.make
+CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.obj: ../ClassGraph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MtmFinalProject.dir\ClassGraph.cpp.obj -c F:\Documents\GitHub\WizardCell\MtmFinalProject\ClassGraph.cpp
 
-CMakeFiles/MtmFinalProject.dir/Graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MtmFinalProject.dir/Graph.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Documents\GitHub\WizardCell\MtmFinalProject\Graph.cpp > CMakeFiles\MtmFinalProject.dir\Graph.cpp.i
+CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Documents\GitHub\WizardCell\MtmFinalProject\ClassGraph.cpp > CMakeFiles\MtmFinalProject.dir\ClassGraph.cpp.i
 
-CMakeFiles/MtmFinalProject.dir/Graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MtmFinalProject.dir/Graph.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Documents\GitHub\WizardCell\MtmFinalProject\Graph.cpp -o CMakeFiles\MtmFinalProject.dir\Graph.cpp.s
+CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Documents\GitHub\WizardCell\MtmFinalProject\ClassGraph.cpp -o CMakeFiles\MtmFinalProject.dir\ClassGraph.cpp.s
+
+CMakeFiles/MtmFinalProject.dir/gcalc.cpp.obj: CMakeFiles/MtmFinalProject.dir/flags.make
+CMakeFiles/MtmFinalProject.dir/gcalc.cpp.obj: ../gcalc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MtmFinalProject.dir/gcalc.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MtmFinalProject.dir\gcalc.cpp.obj -c F:\Documents\GitHub\WizardCell\MtmFinalProject\gcalc.cpp
+
+CMakeFiles/MtmFinalProject.dir/gcalc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MtmFinalProject.dir/gcalc.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Documents\GitHub\WizardCell\MtmFinalProject\gcalc.cpp > CMakeFiles\MtmFinalProject.dir\gcalc.cpp.i
+
+CMakeFiles/MtmFinalProject.dir/gcalc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MtmFinalProject.dir/gcalc.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Documents\GitHub\WizardCell\MtmFinalProject\gcalc.cpp -o CMakeFiles\MtmFinalProject.dir\gcalc.cpp.s
+
+CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.obj: CMakeFiles/MtmFinalProject.dir/flags.make
+CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.obj: ../Exceptions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MtmFinalProject.dir\Exceptions.cpp.obj -c F:\Documents\GitHub\WizardCell\MtmFinalProject\Exceptions.cpp
+
+CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Documents\GitHub\WizardCell\MtmFinalProject\Exceptions.cpp > CMakeFiles\MtmFinalProject.dir\Exceptions.cpp.i
+
+CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Documents\GitHub\WizardCell\MtmFinalProject\Exceptions.cpp -o CMakeFiles\MtmFinalProject.dir\Exceptions.cpp.s
+
+CMakeFiles/MtmFinalProject.dir/graph.cpp.obj: CMakeFiles/MtmFinalProject.dir/flags.make
+CMakeFiles/MtmFinalProject.dir/graph.cpp.obj: ../graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MtmFinalProject.dir/graph.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MtmFinalProject.dir\graph.cpp.obj -c F:\Documents\GitHub\WizardCell\MtmFinalProject\graph.cpp
+
+CMakeFiles/MtmFinalProject.dir/graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MtmFinalProject.dir/graph.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Documents\GitHub\WizardCell\MtmFinalProject\graph.cpp > CMakeFiles\MtmFinalProject.dir\graph.cpp.i
+
+CMakeFiles/MtmFinalProject.dir/graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MtmFinalProject.dir/graph.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Documents\GitHub\WizardCell\MtmFinalProject\graph.cpp -o CMakeFiles\MtmFinalProject.dir\graph.cpp.s
 
 # Object files for target MtmFinalProject
 MtmFinalProject_OBJECTS = \
-"CMakeFiles/MtmFinalProject.dir/main.cpp.obj" \
 "CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj" \
 "CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj" \
-"CMakeFiles/MtmFinalProject.dir/Graph.cpp.obj"
+"CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.obj" \
+"CMakeFiles/MtmFinalProject.dir/gcalc.cpp.obj" \
+"CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.obj" \
+"CMakeFiles/MtmFinalProject.dir/graph.cpp.obj"
 
 # External object files for target MtmFinalProject
 MtmFinalProject_EXTERNAL_OBJECTS =
 
-MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/main.cpp.obj
 MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/Edge.cpp.obj
 MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/Vertex.cpp.obj
-MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/Graph.cpp.obj
+MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/ClassGraph.cpp.obj
+MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/gcalc.cpp.obj
+MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/Exceptions.cpp.obj
+MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/graph.cpp.obj
 MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/build.make
 MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/linklibs.rsp
 MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/objects1.rsp
 MtmFinalProject.exe: CMakeFiles/MtmFinalProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable MtmFinalProject.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\Documents\GitHub\WizardCell\MtmFinalProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable MtmFinalProject.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MtmFinalProject.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

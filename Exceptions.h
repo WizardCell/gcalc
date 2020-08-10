@@ -11,11 +11,6 @@ class Exception             : public std::exception {
 class ProjectException      : public Exception {
 };
 
-class IllegalArgument       : public ProjectException {
-public:
-    const char *what() const noexcept override;
-};
-
 class IllegalName           : public ProjectException {
 public:
     const char *what() const noexcept override;
@@ -46,7 +41,7 @@ public:
 class EdgeMissingEndPoint   : public ProjectException {
 public:
     std::string to_print;
-    EdgeMissingEndPoint(std::string src, std::string dst):to_print("Error: Cannot add edge <" + src + "," + dst + "> due to missing beginpoint."){}
+    EdgeMissingEndPoint(std::string src, std::string dst):to_print("Error: Cannot add edge <" + src + "," + dst + "> due to missing endpoint."){}
 
     const char *what() const noexcept override;
 };

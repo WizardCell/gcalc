@@ -1,3 +1,3 @@
-C:/Users/salih/Desktop/Matam/cmake-build-debug/CMakeFiles/Matam.dir
-C:/Users/salih/Desktop/Matam/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/salih/Desktop/Matam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/CMakeFiles/MtmFinalProject.dir
+F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/Documents/GitHub/WizardCell/MtmFinalProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -2,10 +2,6 @@
 #include <cstring>
 #include "Exceptions.h"
 
-const char *IllegalArgument::what() const noexcept {
-    return "Error: IllegalArgument";
-}
-
 const char *IllegalName::what() const noexcept {
     return "Error: Illegal name";
 }

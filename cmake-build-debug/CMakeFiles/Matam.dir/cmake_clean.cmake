@@ -1,13 +1,13 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Matam.dir/Edge.cpp.obj"
-  "CMakeFiles/Matam.dir/Vertex.cpp.obj"
   "CMakeFiles/Matam.dir/ClassGraph.cpp.obj"
-  "CMakeFiles/Matam.dir/gcalc.cpp.obj"
+  "CMakeFiles/Matam.dir/Edge.cpp.obj"
   "CMakeFiles/Matam.dir/Exceptions.cpp.obj"
+  "CMakeFiles/Matam.dir/Vertex.cpp.obj"
+  "CMakeFiles/Matam.dir/gcalc.cpp.obj"
   "CMakeFiles/Matam.dir/graph.cpp.obj"
-  "Matam.pdb"
   "Matam.exe"
   "Matam.exe.manifest"
+  "Matam.pdb"
   "libMatam.dll.a"
 )
 
