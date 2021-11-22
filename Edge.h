@@ -6,7 +6,6 @@
 #include <set>
 
 
-//Todo: check if pair works
 
 class Edge
 {
@@ -17,7 +16,6 @@ private:
 public:
 	Edge() = default;
 	Edge(Vertex src_vertex, Vertex dest_vertex);
-	//Todo: Constructor of name
 	Edge(const Edge& other);
 	~Edge() = default;
 

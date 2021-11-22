@@ -2,7 +2,14 @@
 #include "gcalc.h"
 
 Graph *create() {
-    return new Graph();
+    try {
+        return new Graph();
+    } catch (const std::bad_alloc &e) {
+        std::cout << "Error: bad allocation" << std::endl;
+    } catch (const std::exception &exp) {
+        std::cout << "Error: Unknown error." << std::endl;
+    }
+    return nullptr;
 }
 
 void destroy(Graph* graph) {
@@ -48,6 +55,10 @@ Graph *addVertex(Graph *graph, const char* v_name) {
         std::cout << e.what() << std::endl;
     } catch (const RedefinedVertex &e) {
         std::cout << e.what() << std::endl;
+    } catch (const std::bad_alloc &e) {
+        std::cout << "Error: bad allocation" << std::endl;
+    } catch (const std::exception &exp) {
+        std::cout << "Error: Unknown error." << std::endl;
     }
     return nullptr;
 }
@@ -100,13 +111,17 @@ Graph *addEdge(Graph *graph, const char* v1_input, const char* v2_input) {
         std::cout << e.what() << std::endl;
     } catch (const RedefinedVertex &e) {
         std::cout << e.what() << std::endl;
+    } catch (const std::bad_alloc &e) {
+        std::cout << "Error: bad allocation" << std::endl;
+    } catch (const std::exception &exp) {
+        std::cout << "Error: Unknown error." << std::endl;
     }
     return nullptr;
 }
 
 void disp(Graph *graph) {
     if(graph == nullptr){
-        std::cout << "$" << std::endl; //Todo check this
+        std::cout << "Error: Graph is null" << std::endl;
         return;
     }
     printGraph(*graph, std::cout);
@@ -161,6 +176,5 @@ Graph *graphComplement(Graph *graph_in, Graph *graph_out) {
     }
     *graph_out = !(*graph_in);
     return graph_out;
-
 }
 

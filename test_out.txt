@@ -1,0 +1,113 @@
+$
+$
+[;;;;;;;;;;;;;;;;;CommandsErrors;;;;;;;;;;;;;;;;;]
+$
+Error: Unrecognized command 'Print({YOUFAILED})'
+Error: Illegal name
+Error: Illegal name
+Error: Unrecognized command 'who reset'
+Error: Unrecognized command 'reset who'
+Error: Unrecognized command 'quit()'
+Error: Unrecognized command '(quit)'
+Error: Unrecognized command 'quit quit'
+Error: Illegal name
+Error: Illegal name
+Error: Unrecognized command 'print {a,b,c}'
+Error: Unrecognized command 'save {a,b},shouldntwork.gc'
+Error: Illegal name
+[;;;;;;;;;;;;;;;;;BracketErrors;;;;;;;;;;;;;;;;;]
+$
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+[;;;;;;;;;;;;;;;;;FileErrors;;;;;;;;;;;;;;;;;]
+$
+Error: Couldn't open file
+Error: Couldn't open file
+Error: Couldn't open file
+[;;;;;;;;;;;;;;;;;GraphErrors;;;;;;;;;;;;;;;;;]
+$
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+[;;;;;;;;;;;;;;;;;TestingABigName;;;;;;;;;;;;;;;;;]
+$
+a
+b
+$
+[;;;;;;;;;;;;;;;;;VertexErrors;;;;;;;;;;;;;;;;;]
+$
+Error: Redefined vertex
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+[;;;;;;;;;;;;;;;;;EdgeErrors;;;;;;;;;;;;;;;;;]
+$
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Cannot add edge <a,c> due to missing endpoint.
+Error: Cannot add edge <c,a> due to missing beginpoint.
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+Error: Parallel edges
+Error: Self edge
+Error: Illegal name
+Error: Illegal name
+Error: Illegal name
+[;;;;;;;;;;;;;;;;;WorksWithoutErrors;;;;;;;;;;;;;;;;;]
+$
+[;[;[;[;;;[;];];;;;];[;];];][;;;;;]print[;;;;;;;[;[;;;];;;];;][;;[;;[;;[;[;[;;];];;];];;];]
+$
+$
+[[][[[]]]X;AE;A;Xii]
+$
+[;[;]]z9823zq1w61saffhr16sda06awd651dawzzZ6zAa[[]]
+$
+[;[]]
+[[];]
+$
+[[];] [;[]]
+[[;[]];a]
+[[;[]];b]
+[[;[]];d]
+[[;[]];q]
+[[;[]];z]
+[[[];];a]
+[[[];];b]
+[[[];];d]
+[[[];];q]
+[[[];];z]
+$
+[[[];];a] [[;[]];b]
+[[[];];a] [[;[]];q]
+[[[];];a] [[;[]];z]
+[[[];];b] [[;[]];a]
+[[[];];b] [[;[]];q]
+[[[];];b] [[;[]];z]
+[[[];];q] [[;[]];a]
+[[[];];q] [[;[]];b]
+[[[];];q] [[;[]];z]
+[[[];];z] [[;[]];a]
+[[[];];z] [[;[]];b]
+[[[];];z] [[;[]];q]
+a
+b
+$
+a b
+b a
+[;;;;;;;;;;;;;;;;;RandomTests;;;;;;;;;;;;;;;;;]
+$
+G

@@ -27,7 +27,7 @@ bool isAlphanumeric(const std::string &s);
 
 void splitVertices(std::set<Vertex>& Vertex_set, const std::string &str);
 
-std::set<Edge> splitEdges(const std::string &str, std::set<Vertex> &Vertex_set);
+std::set<Edge> splitEdges(const std::string &str, const std::set<Vertex>& Vertex_set);
 
 char returnLastDominantOperation(const std::string &s);
 
@@ -41,7 +41,7 @@ std::set<Vertex> readVertices(std::ifstream& infile, unsigned int Vertex_num);
 
 std::set<Edge> readEdges(std::ifstream& infile, unsigned int Edge_num, const std::set<Vertex>& Vertex_set);
 
-Graph executeLoad (  std::map<std::string, Graph> &graphs_map , const std::string& to_interpret);
+Graph executeLoad (const std::string& to_interpret);
 
 void removeParentheses(std::string& to_interpret);
 

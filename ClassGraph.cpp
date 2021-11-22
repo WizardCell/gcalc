@@ -79,7 +79,7 @@ Graph Graph::operator!() const {
     std::set<Vertex> complement_vertices(this->vertices);
     std::set<Edge> complement_edges;
     for (auto const &src : complement_vertices) {
-        for (auto const &dst : complement_vertices) {   //Todo: check if we need to check if src==dst
+        for (auto const &dst : complement_vertices) {
             if (src == dst) {
                 continue;
             }

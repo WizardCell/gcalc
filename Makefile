@@ -21,9 +21,8 @@ Vertex.o: Vertex.cpp Vertex.h Exceptions.h
 libgraph.a: $(OBJS)
 	ar -rs $@ $^
 	
-tar: ClassGraph.cpp Edge.cpp Exceptions.cpp gcalc.cpp graph.cpp Vertex.cpp ClassGraph.h Edge.h Exceptions.h gcalc.h graph.h Vertex.h graph.i
+tar: *.cpp *.h graph.i test_in.txt test_out.txt design.pdf
 	zip gcalc.zip $^ Makefile
 
 clean:
-	rm -f $(OBJS) $(EXEC)
-	
+	rm -f $(OBJS) $(EXEC) libgraph.a gcalc.zip

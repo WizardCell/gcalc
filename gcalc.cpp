@@ -5,14 +5,14 @@ int main(int argc, char *argv[]) {
     try {
         if (argc == 1) {
             Gcalc g_calc = Gcalc();
-            while (g_calc.should_iterate) {
-                std::cout << "Gcalc> ";
-                std::string cmd_line;
-                std::getline(std::cin, cmd_line);
-                if(std::cin.eof()){
+            std::string cmd_line;
+            std::cout << "Gcalc> ";
+            while (std::getline(std::cin, cmd_line)) {
+                g_calc.executeCommand(cmd_line, std::cout);
+                if(!g_calc.should_iterate){
                     break;
                 }
-                g_calc.executeCommand(cmd_line, std::cout);
+                std::cout << "Gcalc> ";
             }
         } else if (argc == 3) {
             ///Get "input.txt"
@@ -91,7 +91,7 @@ std::string trim(const std::string &s) {
 
 bool isAlphanumeric(const std::string &s) {
     if(s.empty()){
-        return false; //todo check
+        return false;
     }
     for (auto &character : s) {
         if (!isalnum(character) || !isalpha(s[0])) {
@@ -129,7 +129,7 @@ void splitVertices(std::set<Vertex> &Vertex_set, const std::string &str) {
 
 }
 
-std::set<Edge> splitEdges(const std::string &str, std::set<Vertex> &Vertex_set) {
+std::set<Edge> splitEdges(const std::string &str, const std::set<Vertex>& Vertex_set) {
     if (str.empty()) {
         return std::set<Edge>();
     }
@@ -336,6 +336,7 @@ std::set<Vertex> readVertices(std::ifstream &infile, unsigned int Vertex_num) {
         ///Read the vertex
         infile.read((char *) temp, sizeof(char) * Vertex_length);
         if(!infile){
+            free(temp);
             throw ReadFailed();
         }
 
@@ -375,6 +376,7 @@ std::set<Edge> readEdges(std::ifstream &infile, unsigned int Edge_num, const std
         ///Read the src vertex
         infile.read((char *) v1_temp, sizeof(char) * v1_length);
         if(!infile){
+            free(v1_temp);
             throw ReadFailed();
         }
 
@@ -400,6 +402,7 @@ std::set<Edge> readEdges(std::ifstream &infile, unsigned int Edge_num, const std
         ///Read the src vertex
         infile.read((char *) v2_temp, sizeof(char) * v2_length);
         if(!infile){
+            free(v2_temp);
             throw ReadFailed();
         }
 
@@ -433,12 +436,15 @@ std::set<Edge> readEdges(std::ifstream &infile, unsigned int Edge_num, const std
 
 }
 
-Graph executeLoad(std::map<std::string, Graph> &graphs_map, const std::string &parameter) {
+Graph executeLoad(const std::string &parameter) {
 
     ///Get the filename
     std::string filename = parameter;
     filename = trim(filename);
 
+    if ((filename.find('(') != std::string::npos) || (filename.find(')') != std::string::npos)) {
+        throw FileDidntOpen();
+    }
     ///Open the file as input
     std::ifstream infile(filename, std::ios_base::binary);
     if (!infile) {
@@ -468,7 +474,6 @@ Graph executeLoad(std::map<std::string, Graph> &graphs_map, const std::string &p
 
     return Graph(Vertex_set, Edge_set);
 }
-
 
 void removeParentheses(std::string &to_interpret) {
     to_interpret = trim(to_interpret);
@@ -510,12 +515,12 @@ Graph stringToGraph(std::map<std::string, Graph> &graphs_map, std::string to_int
         if (to_interpret.substr(0, 4) == "load") {
             std::string parameter = to_interpret.substr(4, std::string::npos);
             if( isInsideParentheses(parameter) ) {
-                return executeLoad(graphs_map, parameter);
+                return executeLoad(parameter);
             }
         }
 
         if ((to_interpret.find_first_of('{') == 0) &&
-            (to_interpret.find_last_of('}') == to_interpret.length() - 1)) {
+            (to_interpret.find_last_of('}')  == to_interpret.length() - 1)) {
             ///case " { ... | ... } "
             return defineGraph(to_interpret);
         }
@@ -564,7 +569,6 @@ bool isBuiltInName(const std::string &graph_name) {
            || (graph_name == "save") || (graph_name == "load");
 }
 
-
 void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
     try {
         std::string trimmed_cmd_line = trim(cmd_line);
@@ -572,8 +576,6 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
         if(trimmed_cmd_line.empty()){
             return;
         }
-        /*///Removes the parentheses
-        removeParentheses(trimmed_cmd_line);*/
 
         ///Find the '=' sign
         size_t eq_sign_index = trimmed_cmd_line.find('=');
@@ -604,7 +606,7 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
 
         } else if (trimmed_cmd_line == "who") {
             for (const auto &graph : graphs_map) {
-                output << graph.first.c_str() << std::endl;
+                output << graph.first << std::endl;
             }
         } else if (trimmed_cmd_line == "reset") {
             graphs_map.clear();
@@ -614,7 +616,7 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
             ///Checks if "print   PARAM == print (...)"
             std::string parameter = trimmed_cmd_line.substr(5, std::string::npos);
             if( !isInsideParentheses(parameter) ){
-                throw UnrecognizedCommand(cmd_line);
+                throw UnrecognizedCommand(trimmed_cmd_line);
             }
 
             ///Gets the parameter inside the parentheses.
@@ -630,7 +632,7 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
             ///Checks if "delete(...)"
             std::string parameter = trimmed_cmd_line.substr(6, std::string::npos);
             if( !isInsideParentheses(parameter) ){
-                throw UnrecognizedCommand(cmd_line);
+                throw UnrecognizedCommand(trimmed_cmd_line);
             }
 
             ///Gets the parameter inside the parentheses
@@ -650,7 +652,7 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
             ///Check if save(...)
             std::string parameter = trimmed_cmd_line.substr(4, std::string::npos);
             if( !isInsideParentheses(parameter) ){
-                throw UnrecognizedCommand(cmd_line);
+                throw UnrecognizedCommand(trimmed_cmd_line);
             }
 
             ///get the inner parameter
@@ -659,7 +661,7 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
             ///Find comma
             size_t comma_index = G_and_Filename.find_last_of(',');
             if (comma_index == std::string::npos) {
-                throw UnrecognizedCommand(cmd_line);
+                throw UnrecognizedCommand(trimmed_cmd_line);
             }
 
             std::string G_name = G_and_Filename.substr(0, comma_index);
@@ -750,7 +752,7 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
             }
 
         } else {
-            throw UnrecognizedCommand(cmd_line);
+            throw UnrecognizedCommand(trimmed_cmd_line);
         }
 
 
@@ -778,6 +780,8 @@ void Gcalc::executeCommand(const std::string &cmd_line, std::ostream &output) {
         output << e.what() << std::endl;
     } catch (const std::bad_alloc &e) {
         output << "Error: bad allocation" << std::endl;
+    } catch (const std::exception &exp) {
+        output << "Error: Unknown error." << std::endl;
     }
 }
 

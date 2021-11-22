@@ -25,18 +25,16 @@ public:
 
 	Graph() = default;
 	Graph(std::set<Vertex> vertices , std::set<Edge> edges):vertices(vertices), edges(edges){}
-	Graph(const Graph& other) { // todo check
+	Graph(const Graph& other) {
         vertices = other.vertices;
         edges    = other.edges;
-	}~Graph() = default;
-	//todo: operator=
+	}
+	~Graph() = default;
 	friend Graph operator+(const Graph& graph1, const Graph& graph2);
 	friend Graph operator^(const Graph& graph1, const Graph& graph2);
 	Graph operator-(const Graph& other) const;
 	friend Graph operator*(const Graph& graph1, const Graph& graph2);
     Graph operator!() const;
-
-    //Todo: operator== ///Do it comparing the names
 };
 
 Graph operator+(const Graph& graph1, const Graph& graph2);
